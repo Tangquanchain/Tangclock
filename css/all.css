@@ -1,0 +1,119 @@
+@charset "UTF-8";
+body {
+  background-color: #293B29;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.colck-pic {
+  background-image: url(../images/clock-bg.svg);
+  background-size: cover;
+  width: 600px;
+  height: 600px;
+  background-position: center center;
+  position: relative;
+}
+
+.colck-pic:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 49%;
+  left: 49%;
+  background-color: #182016;
+  z-index: 1;
+}
+
+.second-arrow {
+  position: absolute;
+  background-image: url(../images/second-hand.svg);
+  width: 13px;
+  height: 126px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  top: 49.5%;
+  left: 49%;
+}
+
+.min-arrow {
+  position: absolute;
+  background-color: #ff7600;
+  border-radius: 5px;
+  width: 8px;
+  height: 96px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  bottom: 50%;
+  left: 49.6%;
+  z-index: 2;
+}
+
+.min-arrow::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+  left: 50%;
+  top: 92%;
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
+}
+
+.min-arrow::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  -webkit-transform: translateX(-1px);
+          transform: translateX(-1px);
+}
+
+.hour-arrow {
+  position: absolute;
+  top: 50%;
+  left: 49.6%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  /*原本位置在6點所以js要加180時間才會準*/
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  /*改變旋轉基準點的位置*/
+  width: 8px;
+  height: 65px;
+  background-color: #fff;
+}
+
+.hour-arrow::after {
+  content: '';
+  display: block;
+  background-color: #2b4930;
+  width: 3px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,104 @@
+body {
+    background-color: #293B29;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.colck-pic {
+    background-image: url(../images/clock-bg.svg);
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+    background-position: center center;
+    position: relative;
+}
+
+//中心點
+.colck-pic:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 49%;
+    left: 49%;
+    background-color: rgb(24, 32, 22);
+    z-index: 1;
+
+}
+
+.second-arrow {
+    position: absolute;
+    background-image: url(../images/second-hand.svg);
+    width: 13px;
+    height: 126px;
+    transform: rotate(180deg);
+    transform-origin: top;
+    top: 49.5%;
+    left: 49%;
+}
+
+.min-arrow {
+    position: absolute;
+    background-color:#ff7600 ;
+    border-radius: 5px;
+    width: 8px;
+    height: 96px;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    bottom: 50%;
+    left: 49.6%;
+    z-index: 2;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: white;
+        left:50%;
+        top: 92%;
+        transform: translateX(-3px);
+    }
+    &::after{
+        content:'';
+        display: block;
+        width: 1px;
+        height: 30px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top:65%;
+        transform: translateX(-1px);
+    }
+}
+
+
+
+.hour-arrow {
+    position: absolute;
+    top: 50%;
+    left: 49.6%;
+    transform: rotate(0deg); /*原本位置在6點所以js要加180時間才會準*/
+    transform-origin: top; /*改變旋轉基準點的位置*/
+    width: 8px;
+    height: 65px;
+    background-color: #fff;
+    &::after {
+        content: '';
+        display: block;
+        background-color: #2b4930;
+        width: 3px;
+        height: 20px;
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translateX(-50%);
+    }
+}
+
+
